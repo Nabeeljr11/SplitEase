@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Subtle modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.45);
+}
+
+/* Button & Card Micro-interactions */
+.btn-press {
+  transition: transform 120ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+.btn-press:active {
+  transform: scale(0.98);
+}
+
+/* Paylix card borders */
+.paylix-card {
+  @apply bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-2xl transition-all duration-150;
+}
+
+.paylix-card-hover {
+  @apply hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:hover:shadow-[0_4px_20px_rgba(0,0,0,0.2)];
+}
