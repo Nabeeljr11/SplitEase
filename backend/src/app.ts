@@ -30,7 +30,7 @@ app.use(
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(null, true); // Permissive for local dev
+        callback(new Error('Origin is not allowed by CORS'));
       }
     },
     credentials: true,
